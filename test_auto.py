@@ -11,17 +11,17 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class TestAuto():
   def setup_method(self, method):
-    # self.driver = webdriver.Chrome("F:\webdriver\chromedriver.exe")
-    self.driver = webdriver.Chrome("D:\chrome\chromedriver.exe")
+    self.driver = webdriver.Chrome("F:\webdriver\chromedriver.exe")
+    # self.driver = webdriver.Chrome("D:\chrome\chromedriver.exe")
     self.vars = {}
 
   def test_auto(self):
-      # self.driver.get("http://39.98.251.12/www/login")
-      self.driver.get("http://192.168.1.197/www/login")
+      self.driver.get("http://39.98.251.12/www/login")
+      # self.driver.get("http://192.168.1.197/www/login")
       self.driver.maximize_window()
       self.driver.find_element(By.CSS_SELECTOR,".ivu-input-type-text > .ivu-input").click()
-      # self.driver.find_element(By.CSS_SELECTOR,".ivu-input-type-text > .ivu-input").send_keys("test")
-      self.driver.find_element(By.CSS_SELECTOR,".ivu-input-type-text > .ivu-input").send_keys("zd")
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-input-type-text > .ivu-input").send_keys("test")
+      # self.driver.find_element(By.CSS_SELECTOR,".ivu-input-type-text > .ivu-input").send_keys("zd")
       self.driver.find_element(By.CSS_SELECTOR,".ivu-input-type-password > .ivu-input").click()
       self.driver.find_element(By.CSS_SELECTOR,".ivu-input-type-password > .ivu-input").send_keys("123456")
       self.driver.find_element(By.CSS_SELECTOR, ".ivu-checkbox-input").click()
@@ -47,9 +47,28 @@ class TestAuto():
       self.driver.find_element(By.CSS_SELECTOR,".ivu-date-picker-cells-month > span:nth-child(4)").click()
       self.driver.find_element(By.CSS_SELECTOR,".ivu-date-picker-cells:nth-child(1) >.ivu-date-picker-cells-cell:nth-child(37) > em").click()
 
-      # self.driver.find_element(By.CSS_SELECTOR,".ivu-form-label-right > .ivu-row:nth-child(3) > .ivu-col:nth-child(1)  .ivu-input-number-input").click() # 身高
-      self.driver.find_element(By.CSS_SELECTOR,".ivu-form-label-right > .ivu-row:nth-child(3) > .ivu-col:nth-child(1)  .ivu-input-number-input").send_keys("120") # 身高
-      time.sleep(100)
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(3) > .ivu-col:nth-child(1)  .ivu-input-number-input").send_keys(Keys.CONTROL,"a")
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(3) > .ivu-col:nth-child(1)  .ivu-input-number-input").send_keys(Keys.BACK_SPACE)
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(3) > .ivu-col:nth-child(1)  .ivu-input-number-input").send_keys("180") # 身高
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(3) > .ivu-col:nth-child(2)  .ivu-input-number-input").send_keys(Keys.CONTROL,"a")
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(3) > .ivu-col:nth-child(2)  .ivu-input-number-input").send_keys(Keys.BACK_SPACE)
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(3) > .ivu-col:nth-child(2)  .ivu-input-number-input").send_keys("70") # 体重
+
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(4) > .ivu-col:nth-child(1) .ivu-input").send_keys("13111111111") # 手机号
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(4) > .ivu-col:nth-child(1) .ivu-input").send_keys("北京市石景山区") # 手机号
+
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-row:nth-child(5) > .ivu-col .ivu-select-placeholder").click() # 床号
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-col:nth-child(1) .ivu-select-item:nth-child(1)").click() # 床号
+
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-col:nth-child(2) .ivu-select-selected-value").click() # 护理等级
+      self.driver.find_element(By.CSS_SELECTOR,".ivu-col:nth-child(2)  .ivu-select-item:nth-child(1)").click() # 护理等级
+
+      self.driver.find_element(By.CSS_SELECTOR,".v-transfer-dom:nth-child(19) .ivu-btn-primary").click() # 提交
+
+
+
+
+
 
 
 
